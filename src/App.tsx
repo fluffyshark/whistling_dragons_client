@@ -1,6 +1,7 @@
 import React from "react";
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import "./styles/styles.css"
 import StartView from "./pages/start/StartView"
 import CampaignView from "./pages/campaigns/CampaignView"
 import LoginView from "./pages/login/LoginView"
