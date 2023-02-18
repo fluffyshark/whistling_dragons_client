@@ -45,6 +45,8 @@
                 background: linear-gradient(180deg, rgba(58,145,151,1) 0%, rgba(13,42,46,1) 100%);
                 display: flex; justify-content: center; align-items: center;
                 margin: 2.5px;
+                cursor: pointer;
+                z-index: 100;
 
                 p {color: white; font-size: 23px; font-family: 'Labrada', serif; margin: 0; text-shadow: 2px 2px black;}
             }
@@ -53,9 +55,10 @@
 
     &_clubName {
         width: 100%;
-        height: 100vh;
+        height: 10vh;
         display: flex; justify-content: center; align-items: center; flex-direction: column;
-        position: absolute; top:0;
+        position: absolute; top:calc(50% - 5vh);
+        z-index: 0;
 
         p {color: white; font-weight: bold; font-family: 'Labrada', serif; margin: 0; text-shadow: 5px 5px black;}
         p:nth-child(1) {font-size: 50px; transform: translateY(20px);}
@@ -68,7 +71,103 @@
 
 
 
+
+
+
+
 .sectionTwo {
     width: 100%;
     height: 100vh;
+    background-image: url("../components/assets/backgrounds/backgroundImage02.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+    display: flex; flex-direction: column; align-items: center;
+
+    &_menu {
+        width: 100%;
+        height: 70px;
+        display: flex; justify-content: center; align-items: center; flex-direction: column;
+
+        &_texts {
+            width: 50%;
+            height: 30px;
+            display: flex; align-items: center; justify-content: space-around;
+
+            p {color: white; font-family: 'Labrada', serif; font-size: 25px; margin: 0; margin-top: -6px; cursor: pointer;}
+        }
+
+        &_decor {
+            width: 100%;
+            height: 100%px;
+            margin: 3px;
+            display: flex; align-items: center; justify-content: center; 
+
+            &_goldenLine {
+                width: 25%;
+                height: 2px;
+                border-radius: 5px;
+                background-color: #7d6b29;
+            }
+            &_dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 10px;
+                margin-left: 7px;
+                margin-right: 7px;
+                background-color: #7d6b29;
+            }
+           
+        }
+        
+    } // End of menu
+
+    &_title {
+        width: 100%;
+        height: 100px;
+        display: flex; justify-content: center; align-items: center;
+        
+        p {color: white; font-size: 60px; font-weight: bold; font-family: 'Labrada', serif;}
+    }
+
+    img {rotate: 180deg; height: 60px;}
+
+    &_container {
+        width: 50%;
+        height: 55%;
+        border-radius: 5px;
+        margin-top: 30px;
+        background-color: #0000009a;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex; align-items: center; flex-direction: column;
+        overflow-y: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+          
+
+        &_item {
+            width: 95%;
+            height: auto;
+            margin-top: 10px;
+            p {margin: 0; margin-left: 10px; margin-right: 10px;  font-family: 'Labrada', serif;}
+            p:nth-child(2) {font-size: 15px; color: #7d6b29;}
+            p:nth-child(3) {font-size: 30px; color: white;}
+            p:nth-child(4) {font-size: 14px; color: white; font-style: italic;}
+
+            hr {width: 100%; border-color: #7d6b29; margin-top: 10px;}
+        }
+
+        
+    }
 }
+
+
+#frontpage_information_container {
+    -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+}
+
+#frontpage_information_container::-webkit-scrollbar {
+    display: none;
+  }

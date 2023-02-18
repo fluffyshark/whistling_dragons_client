@@ -14,7 +14,7 @@ const SectionOne = () => {
             </div>
         </div>
         <div className="sectionOne_clubName"><p>The</p><p>Whistling Dragons</p><p>Club</p></div>
-    </div>
+      </div>
   )
 }
 
