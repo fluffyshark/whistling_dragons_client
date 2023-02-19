@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import sunCrownImg from "../../components/assets/misc/img_sun_crown.png"
 import CreateCampaignCard from './components/CreateCampaignCard'
+import CreateCampaignMaps from './components/CreateCampaignMaps'
 import CreateCampaignStory from './components/CreateCampaignStory'
 
 
@@ -27,7 +28,7 @@ const CreateCampaign = (props: Props) => {
         </div>
 
 
-        <CreateCampaignStory />
+        <CreateCampaignMaps />
 
     </div>
   )
