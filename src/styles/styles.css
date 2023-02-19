@@ -135,7 +135,7 @@
 }
 .sectionTwo_menu_decor {
   width: 100%;
-  height: 100% px;
+  height: 100%;
   margin: 3px;
   display: flex;
   align-items: center;
@@ -223,6 +223,171 @@
 }
 
 #frontpage_information_container::-webkit-scrollbar {
+  display: none;
+}
+
+.memberView {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../components/assets/backgrounds/backgroundImage01.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.memberView_menu {
+  width: 50%;
+  height: 225px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.memberView_menu_text {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.memberView_menu_text p {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  font-family: "Labrada", serif;
+  margin: 0;
+}
+.memberView_menu_decor {
+  width: 100%;
+  height: 10%;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.memberView_menu_decor_goldenLine {
+  width: 48%;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #7d6b29;
+}
+.memberView_menu_decor_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  margin-left: 7px;
+  margin-right: 7px;
+  background-color: #7d6b29;
+}
+.memberView_menu_title_and_crown {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.memberView_menu_title_and_crown p {
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0;
+  font-family: "Labrada";
+}
+.memberView_menu_title_and_crown img {
+  rotate: 180deg;
+  height: 60px;
+  margin-top: 5px;
+}
+.memberView_cardContainer {
+  width: 80%;
+  height: calc(100% - 225px);
+  margin-top: 30px;
+  overflow-y: scroll;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.memberView_cardContainer_card {
+  width: 300px;
+  height: 400px;
+  border: 4px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.memberView_cardContainer_card_imageContainer {
+  width: 100%;
+  height: 50%;
+  background-image: url("../components/assets/misc/campaignThumb01.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.memberView_cardContainer_card_descriptions {
+  width: 100%;
+  height: 50%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+.memberView_cardContainer_card_descriptions_title {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+}
+.memberView_cardContainer_card_descriptions_title p {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Labrada", serif;
+  margin: 0;
+  margin-top: 5px;
+}
+.memberView_cardContainer_card_descriptions_text {
+  width: 100%;
+  height: 65%;
+  display: flex;
+  align-items: flex-start;
+}
+.memberView_cardContainer_card_descriptions_text p {
+  color: #666666;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 13px;
+  font-family: "Arial", serif;
+  line-height: 1.3;
+  margin: 0;
+  margin-top: 10px;
+}
+.memberView_cardContainer_card_descriptions_players {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.memberView_cardContainer_card_descriptions_players p:nth-child(1) {
+  color: white;
+  font-size: 18px;
+  font-family: "Labrada", serif;
+  margin: 0;
+  transform: translateY(-5px);
+}
+.memberView_cardContainer_card_descriptions_players p:nth-child(2) {
+  color: white;
+  font-size: 25px;
+  font-family: "Labrada", serif;
+  margin: 0;
+  margin-left: 10px;
+  transform: translateY(-8px);
+}
+.memberView_cardContainer::-webkit-scrollbar {
   display: none;
 }
 
