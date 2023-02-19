@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 
-type Props = {}
 
-const CreateCampaignStory = (props: Props) => {
+type CampaignStoryProps = {
+    setCampaignPhase: (value: string) => void;
+}
+
+
+const CreateCampaignStory = ({setCampaignPhase}: CampaignStoryProps) => {
 
     const [textValue, setTextValue] = useState<string>('');
 
@@ -10,6 +14,7 @@ const CreateCampaignStory = (props: Props) => {
         setTextValue(event.target.value);
       };
 
+   
   return (
     <div className='campaignStory_container'>
          <p>Create Campaign Story</p>
@@ -17,7 +22,7 @@ const CreateCampaignStory = (props: Props) => {
             <textarea placeholder='Tell a story...' value={textValue} onChange={handleTextChange} name="text" id="text" cols={1} rows={2} />
         </div>
 
-        <button className="campaignStory_container_cardNextBtn"><p>Next</p></button>
+        <button className="campaignStory_container_cardNextBtn" onClick={() => setCampaignPhase("mapPhase")}><p>Next</p></button>
     </div>
   )
 }

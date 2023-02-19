@@ -1,9 +1,13 @@
 import React from 'react'
 import icon_upload_image from "../../../components/assets/misc/icon_upload_image.png"
 
-type Props = {}
+type CampaignMapProps = {
+    setCampaignPhase: (value: string) => void;
+}
 
-const CreateCampaignMaps = (props: Props) => {
+
+const CreateCampaignMaps = ({setCampaignPhase}: CampaignMapProps) => {
+
   return (
     <div className='campaignMaps_container'>
         <div className="campaignMaps_container_title">
@@ -16,7 +20,7 @@ const CreateCampaignMaps = (props: Props) => {
          
  
         </div>
-        <button className="campaignMaps_container_cardNextBtn"><p>Next</p></button>
+        <button className="campaignMaps_container_cardNextBtn" onClick={() => setCampaignPhase("enchountersPhase")}><p>Next</p></button>
     </div>
   )
 }

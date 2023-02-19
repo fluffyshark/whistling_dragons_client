@@ -10,6 +10,8 @@ import CreateCampaignStory from './components/CreateCampaignStory'
 type Props = {}
 
 const CreateCampaign = (props: Props) => {
+
+  const [campaignPhase, setCampaignPhase] = useState<string>("cardPhase")
   
 
   
@@ -29,8 +31,10 @@ const CreateCampaign = (props: Props) => {
           </div>
         </div>
 
-
-        <CreateCampaignEncounters />
+        {campaignPhase === "cardPhase" && <CreateCampaignCard setCampaignPhase={setCampaignPhase} />}
+        {campaignPhase === "storyPhase" && <CreateCampaignStory setCampaignPhase={setCampaignPhase} />}
+        {campaignPhase === "mapPhase" && <CreateCampaignMaps setCampaignPhase={setCampaignPhase} />}
+        {campaignPhase === "enchountersPhase" && <CreateCampaignEncounters />}
 
     </div>
   )
