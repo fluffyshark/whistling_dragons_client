@@ -465,4 +465,190 @@
   left: 94.5%;
   border: none;
   cursor: pointer;
+}
+
+.createCampaign {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../components/assets/backgrounds/backgroundImage01.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.createCampaign_menu {
+  width: 50%;
+  height: 225px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.createCampaign_menu_text {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.createCampaign_menu_text p {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  font-family: "Labrada", serif;
+  margin: 0;
+}
+.createCampaign_menu_decor {
+  width: 100%;
+  height: 10%;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.createCampaign_menu_decor_goldenLine {
+  width: 48%;
+  height: 2px;
+  border-radius: 5px;
+  background-color: #7d6b29;
+}
+.createCampaign_menu_decor_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  margin-left: 7px;
+  margin-right: 7px;
+  background-color: #7d6b29;
+}
+.createCampaign_menu_title_and_crown {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.createCampaign_menu_title_and_crown p {
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
+  margin: 0;
+  font-family: "Labrada";
+}
+.createCampaign_menu_title_and_crown img {
+  rotate: 180deg;
+  height: 60px;
+  margin-top: 5px;
+}
+.createCampaign_cardContainer {
+  width: 50%;
+  height: calc(100% - 225px - 10%);
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #7d6b29;
+  border-radius: 2px;
+  position: relative;
+}
+.createCampaign_cardContainer_card {
+  width: 300px;
+  height: 400px;
+  border: 4px solid black;
+  border-radius: 5px;
+  position: absolute;
+  box-shadow: 0px 0px 5px white;
+}
+.createCampaign_cardContainer_card_imageContainer {
+  width: 100%;
+  height: 50%;
+  background-color: #0b2529;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.createCampaign_cardContainer_card_imageContainer img {
+  height: 60px;
+}
+.createCampaign_cardContainer_card_descriptions {
+  width: 100%;
+  height: 50%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.createCampaign_cardContainer_card_descriptions_title {
+  width: 97%;
+  height: 17%;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #7d6b29;
+  margin-top: 5px;
+}
+.createCampaign_cardContainer_card_descriptions_title input {
+  width: 100%;
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-family: "Labrada";
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.createCampaign_cardContainer_card_descriptions_text {
+  width: 97%;
+  height: 50%;
+  display: flex;
+  align-items: flex-start;
+  border: 2px solid #7d6b29;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.createCampaign_cardContainer_card_descriptions_text textarea {
+  width: 100%;
+  height: calc(100% - 5px);
+  background-color: black;
+  color: #666666;
+  font-size: 15px;
+  padding-left: 5px;
+  font-family: "Labrada";
+}
+.createCampaign_cardContainer_card_descriptions_players {
+  width: 97%;
+  height: 20%;
+  border: 2px solid #7d6b29;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.createCampaign_cardContainer_card_descriptions_players input {
+  width: 100%;
+  height: calc(100% - 4px);
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-family: "Labrada";
+  font-size: 15px;
+}
+.createCampaign_cardContainer_cardNextBtn {
+  width: 80px;
+  height: 35px;
+  background-color: black;
+  cursor: pointer;
+  border: 2px solid #7d6b29;
+  position: absolute;
+  top: 92%;
+  left: 90%;
+}
+.createCampaign_cardContainer_cardNextBtn p {
+  font-family: "Labrada";
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  transform: translateY(-2px);
 }/*# sourceMappingURL=styles.css.map */

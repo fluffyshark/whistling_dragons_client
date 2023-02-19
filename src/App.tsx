@@ -4,8 +4,8 @@ import "./App.css";
 import "./styles/styles.css"
 import StartView from "./pages/start/StartView"
 import CampaignView from "./pages/campaigns/CampaignView"
-import LoginView from "./pages/login/LoginView"
 import MemberView from "./pages/members/MemberView";
+import CreateCampaign from "./pages/createCampaign/CreateCampaign";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
     <Routes>
       <Route path="/" element={<StartView/>}></Route> 
       <Route path="/campaigns" element={<CampaignView/>}></Route> 
+      <Route path="/createcampaign" element={<CreateCampaign/>}></Route> 
       <Route path="/member" element={<MemberView/>}></Route> 
       <Route path="/*" element={<StartView/>}></Route> 
     </Routes>

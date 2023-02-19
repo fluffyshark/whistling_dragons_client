@@ -8,7 +8,7 @@ const MemberView = (props: Props) => {
     <div className='memberView'>
 
         <div className="memberView_menu">
-          <div className="memberView_menu_text"><p>Current Campaigns</p><p>Past Campaigns</p><p>Create Campaigns</p></div>
+          <div className="memberView_menu_text"><p>Current Campaigns</p><p>Past Campaigns</p><p>Create Campaign</p></div>
         
           <div className="memberView_menu_decor">
             <div className="memberView_menu_decor_goldenLine"></div><div className="memberView_menu_decor_dot"></div><div className="memberView_menu_decor_goldenLine"></div>
