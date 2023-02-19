@@ -1,10 +1,20 @@
 import React from 'react'
 
-type Props = {}
 
-const LoginView = (props: Props) => {
+const LoginView = () => {
   return (
-    <div>LoginView</div>
+    <div className='login'>
+      <p>Login</p>
+      <div className="login_email">
+        <input type="text" placeholder='Email' />
+      </div>
+      <div className="login_password">
+      <input type="password" placeholder='Password' />
+      </div>
+      <button className="login_button"><p>Login</p></button>
+
+      <button className="login_exit">x</button>
+    </div>
   )
 }
 

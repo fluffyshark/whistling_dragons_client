@@ -1,0 +1,64 @@
+.login {
+    width: 500px;
+    height: 400px;
+    background-color: #000000c3;
+    border: 2px solid #aca14d;
+    display: flex; justify-content: center; align-items: center; flex-direction: column;
+    position: absolute;
+
+    p {color: white; font-size: 40px; margin: 0; font-weight: bold;}
+
+    input {
+        width: 94%; 
+        height: 88%;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        padding-left: 10px;
+        background-color: transparent;
+        font-family: 'Labrada', serif; 
+    }
+
+    &_email {
+        width: 250px;
+        height: 45px;
+        background-color: black;
+        border: 2px solid #aca14d;
+        margin-top: 10px;
+
+       
+    }
+    &_password {
+        width: 250px;
+        height: 45px;
+        background-color: black;
+        border: 2px solid #aca14d;
+        margin-top: 10px;
+
+
+    }
+    &_button {
+        width: 80px;
+        height: 30px;
+        background-color: black;
+        border: 2px solid #aca14d;
+        margin-top: 10px;
+        display: flex; justify-content: center; align-items: center;
+        cursor: pointer;
+        
+        p {margin: 0; font-size: 18px; color: white; font-weight: bold; font-family: 'Labrada', serif; transform: translateY(-2px);}
+    }
+
+    &_exit {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        color: white;
+        font-family: 'Labrada', serif;
+        font-size: 20px;
+        position: absolute; top: 0%; left: 94.5%;
+        border: none;
+        cursor: pointer;
+    }
+}
+
