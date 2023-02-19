@@ -118,8 +118,6 @@
 
                 
             }
-
-            
           
         }
 
@@ -240,6 +238,80 @@
     }
 
     
-
 }
 
+
+
+
+
+.campaignEncounters {
+    width: 50%;
+    height: calc(100% - 225px - 10%);
+    background-color: #000000cc;
+    margin-top: 30px;
+    display: flex; flex-direction: column;
+    border: 3px solid #7d6b29;
+    border-radius: 2px;
+    position: relative;
+
+    &_title {
+        width: 100%;
+        height: 70px;
+        min-height: 70px;
+        display: flex; justify-content: center; align-items: center;
+
+        p {color: white; font-size: 25px; margin: 0; font-weight: bold; font-family: "Labrada"; }
+    }
+
+    &_cardsSection {
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+        &_creatorside {
+            width: 40%;
+            height: 100%;
+            display: flex; justify-content: center;
+        }
+
+        &_libraryside {
+            width: 60%;
+            height: 100%;
+            
+            &_container {
+                width: 100%;
+                height: 88%;
+                padding-left: 5px;
+                display: flex; flex-wrap: wrap; gap: 10px;
+                overflow-y: scroll;
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none; 
+            }
+
+            &_container::-webkit-scrollbar {
+                display: none;
+              }
+              
+            &_cardNextBtn {
+                width: 100px;
+                height: 35px;
+                background-color: black;
+                cursor: pointer;
+                border: 2px solid #7d6b29;
+                position: absolute; top: 92%; left: 88%;
+                
+                p {font-family: "Labrada"; font-size: 20px; color: white; margin: 0; transform: translateY(-2px);}
+            }
+
+        }
+
+        
+
+
+    }
+
+    
+
+    
+
+}
