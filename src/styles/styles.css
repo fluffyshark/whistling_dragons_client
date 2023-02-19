@@ -236,6 +236,8 @@
   align-items: center;
   flex-direction: column;
   position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 250px);
 }
 .login p {
   color: white;

@@ -4,7 +4,7 @@
     background-color: #000000c3;
     border: 2px solid #aca14d;
     display: flex; justify-content: center; align-items: center; flex-direction: column;
-    position: absolute;
+    position: absolute; top: calc(50% - 200px); left: calc(50% - 250px);
 
     p {color: white; font-size: 40px; margin: 0; font-weight: bold;}
 

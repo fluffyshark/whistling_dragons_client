@@ -13,7 +13,6 @@ function App() {
     <Routes>
       <Route path="/" element={<StartView/>}></Route> 
       <Route path="/campaigns" element={<CampaignView/>}></Route> 
-      <Route path="/login" element={<LoginView/>}></Route> 
       <Route path="/member" element={<MemberView/>}></Route> 
       <Route path="/*" element={<StartView/>}></Route> 
     </Routes>

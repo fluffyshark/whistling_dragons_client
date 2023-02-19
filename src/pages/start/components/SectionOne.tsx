@@ -1,6 +1,11 @@
+import { useState } from "react"
 import sunCrownImg from "../../../components/assets/misc/img_sun_crown.png"
+import LoginView from "../../login/LoginView"
 
 const SectionOne = () => {
+
+  const [toggleLogin, setToggleLogin] = useState<boolean>(false)
+
   return (
     <div className='sectionOne'>
         <div className="sectionOne_menu">
@@ -10,10 +15,18 @@ const SectionOne = () => {
                 <div className="sectionOne_menu_container_button"><p>About</p></div>
                 <div className="sectionOne_menu_container_middle"><p>Dungeons & Dragons</p></div>
                 <div className="sectionOne_menu_container_button"><p>Apply</p></div>
-                <div className="sectionOne_menu_container_button"><p>Login</p></div>
+                <div className="sectionOne_menu_container_button" onClick={() => setToggleLogin(true)}><p>Login</p></div>
             </div>
         </div>
-        <div className="sectionOne_clubName"><p>The</p><p>Whistling Dragons</p><p>Club</p></div>
+        
+        {toggleLogin ? 
+          (
+            <LoginView setToggleLogin={setToggleLogin} />
+          ) : (
+            <div className="sectionOne_clubName"><p>The</p><p>Whistling Dragons</p><p>Club</p></div>
+          )
+        }
+
       </div>
   )
 }
