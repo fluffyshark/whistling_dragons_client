@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
 import icon_upload_image from "../../../components/assets/misc/icon_upload_image.png"
 import icon_sword from "../../../components/assets/misc/icon_sword.png"
 import icon_heart from "../../../components/assets/misc/icon_heart.png"
@@ -8,15 +9,43 @@ type CardCreator = {
     cardType:string
 }
 
+interface FormData {
+    titleInput: string;
+    descriptionInput: string;
+    numberOfPlayersInput: number;
+  }
+
 const CardCreator = ({cardType}: CardCreator) => {
 
- 
-    const [textValue, setTextValue] = useState<string>('');
+    // Captures the value of three inputs, will be sent to dispatch to createCampaignCard reducer 
+    const [formData, setFormData] = React.useState<FormData>({
+        titleInput: '',
+        descriptionInput: '',
+        numberOfPlayersInput: 0,
+      });
 
+    const dispatch = useDispatch()
+
+
+    // Handle input from textarea where user write campaign descriptions or story summary
     const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setTextValue(event.target.value);
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
       };
 
+      // Handle inputs from title and how many players the user wants this campaign to have 
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => { 
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value });
+    }
+
+    // Printing out formData to console, checking so everything is in order
+    useEffect(() => {
+        console.log("formData", formData)
+    }, [formData])
+
+
+    
   return (
     <>
         {cardType === "campaign" && (
@@ -27,13 +56,13 @@ const CardCreator = ({cardType}: CardCreator) => {
                 </div> 
                 <div className="cardCreator_descriptions">
                     <div className="cardCreator_descriptions_title">
-                        <input type="text" placeholder='Title...' />
+                        <input type="text" name="titleInput" placeholder='Title...' value={formData.titleInput} onChange={handleInputChange} />
                     </div>
                     <div className="cardCreator_descriptions_text">
-                        <textarea placeholder='Description...' value={textValue} onChange={handleTextChange} name="text" id="text" cols={1} rows={2} />
+                        <textarea placeholder='Description...' name="descriptionInput" value={formData.descriptionInput} onChange={handleTextChange} id="text" cols={1} rows={2} />
                     </div>
                     <div className="cardCreator_descriptions_players">
-                        <input type="text" placeholder='How many player...' />
+                        <input type="text" name="numberOfPlayersInput" placeholder='How many player...' value={formData.numberOfPlayersInput} onChange={handleInputChange} />
                     </div>
                 </div>
             </div>
@@ -48,7 +77,7 @@ const CardCreator = ({cardType}: CardCreator) => {
                 </div> 
                 <div className="cardCreator_encounter_descriptions">
                     <div className="cardCreator_encounter_descriptions_title">
-                        <input type="text" placeholder='Title...' />
+                        <input type="text" name="titleInput" placeholder='Title...' value={formData.titleInput} onChange={handleInputChange} />
                     </div>
                     <div className="cardCreator_encounter_descriptions_type">
                         <p>Environment</p>
@@ -56,7 +85,7 @@ const CardCreator = ({cardType}: CardCreator) => {
                         <p>Quest</p>
                     </div>
                     <div className="cardCreator_encounter_descriptions_text">
-                        <textarea placeholder='Description...' value={textValue} onChange={handleTextChange} name="text" id="text" cols={1} rows={2} />
+                    <textarea placeholder='Description...' name="descriptionInput" value={formData.descriptionInput} onChange={handleTextChange} id="text" cols={1} rows={2} />
                     </div>
                     <div className="cardCreator_encounter_descriptions_stats">
                         <div className="cardCreator_encounter_descriptions_stats_field">
