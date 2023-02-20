@@ -5,15 +5,19 @@ interface CreateCampaignData {
   owner: string;
   title: string;
   description: string;
-  status: string;
-  numberOfPlayers:number;
+  numberOfPlayers:string;
   thumbnail: string;
   maps?: any[];
   encounters?: any[];
 }
 
+interface CreationPhase {
+  creationPhase: string;
+}
 
-export var createCampaignData = {id:"", owner: "", title: "", numberOfPlayers: 0,  description: "", thumbnail: "", maps: [], encounters: []} 
+
+
+export var createCampaignData = {id:"", owner: "", title: "", numberOfPlayers: "",  description: "", thumbnail: "", maps: [], encounters: [], creationPhase:""} 
 
 const CreateCampaignSlice = createSlice({
   name: "campaign",
@@ -27,8 +31,11 @@ const CreateCampaignSlice = createSlice({
       state.value.description = action.payload.description
       state.value.numberOfPlayers = action.payload.numberOfPlayers
     },
+    creationPhase: (state, action: PayloadAction<CreationPhase>) => {
+      state.value.creationPhase = action.payload.creationPhase
+    },
   },
 });
 
-export const { createCampaignCard } = CreateCampaignSlice.actions;
+export const { createCampaignCard, creationPhase } = CreateCampaignSlice.actions;
 export default CreateCampaignSlice.reducer;
