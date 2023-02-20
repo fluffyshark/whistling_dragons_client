@@ -792,6 +792,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   cursor: pointer;
 }
 .cardCreator_imageContainer img {

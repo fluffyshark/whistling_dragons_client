@@ -12,9 +12,12 @@ const CreateCampaignStory = ({setCampaignPhase}: CampaignStoryProps) => {
 
     const [story, setStory] = useState<string>('');
 
+
     const dispatch = useDispatch()
     // Accessing global store for createCampaignData object
     const createCampaign = useSelector((state:any) => state.createcampaign.value)
+
+
 
     const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       setStory(event.target.value);
@@ -31,12 +34,8 @@ const CreateCampaignStory = ({setCampaignPhase}: CampaignStoryProps) => {
     }
 
 
-
-  useEffect(() => {
-    console.log("createCampaign", createCampaign)
-}, [createCampaign])
-
    
+
   return (
     <div className='campaignStory_container'>
          <p>Create Campaign Story</p>
@@ -48,5 +47,6 @@ const CreateCampaignStory = ({setCampaignPhase}: CampaignStoryProps) => {
     </div>
   )
 }
+
 
 export default CreateCampaignStory

@@ -5,6 +5,7 @@ import icon_sword from "../../../components/assets/misc/icon_sword.png"
 import icon_heart from "../../../components/assets/misc/icon_heart.png"
 import icon_defence from "../../../components/assets/misc/icon_armor.png"
 import { createCampaignCard } from '../../../redux/CreateCampaignReducer'
+import ImageCompressor from "../../../components/imageCompressor/imageCompressor"
 
 type CardCreator = {
     cardType:string
@@ -55,7 +56,6 @@ const CardCreator = ({cardType}: CardCreator) => {
                     id: "Generated in reducer",
                     owner: "Chadd Oder",
                     title: formData.titleInput,
-                    thumbnail: "not implemented",
                     description: formData.descriptionInput,
                     numberOfPlayers: formData.numberOfPlayersInput,
                   }));  
@@ -64,15 +64,15 @@ const CardCreator = ({cardType}: CardCreator) => {
     }, [createCampaign])
 
 
-    
+
     
   return (
     <>
         {cardType === "campaign" && (
 
             <div className="cardCreator">
-                <div className="cardCreator_imageContainer">
-                    <img src={icon_upload_image} alt="" />    
+                <div className="cardCreator_imageContainer">  
+                    <ImageCompressor /> 
                 </div> 
                 <div className="cardCreator_descriptions">
                     <div className="cardCreator_descriptions_title">
