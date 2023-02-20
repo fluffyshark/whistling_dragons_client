@@ -64,11 +64,7 @@ const CardCreator = ({cardType}: CardCreator) => {
     }, [createCampaign])
 
 
-    useEffect(() => {
-        console.log("createCampaign", createCampaign)
-    }, [createCampaign])
-
-
+    
     
   return (
     <>
