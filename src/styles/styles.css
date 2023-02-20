@@ -860,6 +860,114 @@
   font-size: 15px;
 }
 
+.cardCreator_encounter {
+  width: 300px;
+  height: 450px;
+  border: 4px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px white;
+}
+.cardCreator_encounter_imageContainer {
+  width: 100%;
+  height: 45%;
+  background-color: #0b2529;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cardCreator_encounter_imageContainer img {
+  height: 60px;
+}
+.cardCreator_encounter_descriptions {
+  width: 100%;
+  height: 55%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cardCreator_encounter_descriptions_title {
+  width: 97%;
+  height: 17%;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #7d6b29;
+  margin-top: 5px;
+}
+.cardCreator_encounter_descriptions_title input {
+  width: 100%;
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-family: "Labrada";
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.cardCreator_encounter_descriptions_type {
+  width: 100%;
+  height: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+.cardCreator_encounter_descriptions_type p {
+  color: #7d6b29;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 0;
+  font-family: "Labrada";
+}
+.cardCreator_encounter_descriptions_text {
+  width: 97%;
+  height: 50%;
+  display: flex;
+  align-items: flex-start;
+  border: 2px solid #7d6b29;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.cardCreator_encounter_descriptions_text textarea {
+  width: 100%;
+  height: calc(100% - 5px);
+  background-color: black;
+  color: #666666;
+  font-size: 15px;
+  padding-left: 5px;
+  font-family: "Labrada";
+}
+.cardCreator_encounter_descriptions_stats {
+  width: 97%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cardCreator_encounter_descriptions_stats_field {
+  width: 70px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cardCreator_encounter_descriptions_stats_field img {
+  height: 25px;
+  margin-right: 5px;
+}
+.cardCreator_encounter_descriptions_stats_field input {
+  width: 30px;
+  height: calc(100% - 4px);
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  font-family: "Labrada";
+  font-size: 25px;
+}
+
 .campaignCard {
   width: 300px;
   height: 400px;
@@ -935,14 +1043,14 @@
   transform: translateY(-8px);
 }
 
-.encounterCard {
+.encounterCard_normal {
   width: 300px;
   height: 400px;
   border: 4px solid black;
   border-radius: 5px;
   cursor: pointer;
 }
-.encounterCard_imageContainer {
+.encounterCard_normal_imageContainer {
   width: 100%;
   height: 50%;
   background-image: url("../components/assets/misc/campaignThumb01.webp");
@@ -950,14 +1058,14 @@
   background-size: cover;
   background-position: center center;
 }
-.encounterCard_descriptions {
+.encounterCard_normal_descriptions {
   width: 100%;
   height: 50%;
   background-color: black;
   display: flex;
   flex-direction: column;
 }
-.encounterCard_descriptions_title {
+.encounterCard_normal_descriptions_title {
   width: 100%;
   height: 25%;
   display: flex;
@@ -965,14 +1073,14 @@
   flex-direction: column;
   align-items: center;
 }
-.encounterCard_descriptions_title p:nth-child(1) {
+.encounterCard_normal_descriptions_title p:nth-child(1) {
   color: white;
   font-size: 20px;
   font-weight: bold;
   font-family: "Labrada", serif;
   margin: 0;
 }
-.encounterCard_descriptions_title p:nth-child(2) {
+.encounterCard_normal_descriptions_title p:nth-child(2) {
   color: #7d6b29;
   font-size: 13px;
   font-weight: bold;
@@ -980,13 +1088,74 @@
   margin: 0;
   margin-top: -4px;
 }
-.encounterCard_descriptions_text {
+.encounterCard_normal_descriptions_text {
   width: 100%;
   height: 72%;
   display: flex;
   align-items: flex-start;
 }
-.encounterCard_descriptions_text p {
+.encounterCard_normal_descriptions_text p {
+  color: #666666;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 13px;
+  font-family: "Arial", serif;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.encounterCard_edit {
+  width: 300px;
+  height: 400px;
+  border: 4px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.encounterCard_edit_imageContainer {
+  width: 100%;
+  height: 50%;
+  background-image: url("../components/assets/misc/campaignThumb01.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.encounterCard_edit_descriptions {
+  width: 100%;
+  height: 50%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+.encounterCard_edit_descriptions_title {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.encounterCard_edit_descriptions_title p:nth-child(1) {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Labrada", serif;
+  margin: 0;
+}
+.encounterCard_edit_descriptions_title p:nth-child(2) {
+  color: #7d6b29;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: "Labrada", serif;
+  margin: 0;
+  margin-top: -4px;
+}
+.encounterCard_edit_descriptions_text {
+  width: 100%;
+  height: 72%;
+  display: flex;
+  align-items: flex-start;
+}
+.encounterCard_edit_descriptions_text p {
   color: #666666;
   padding-left: 15px;
   padding-right: 15px;
