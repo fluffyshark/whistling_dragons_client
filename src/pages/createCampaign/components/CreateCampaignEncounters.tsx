@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import CardCreator from './CardCreator';
 import EncounterCard from "../../../components/cards/EncounterCard"
 
@@ -7,6 +8,8 @@ type Props = {}
 const CreateCampaignEncounters = (props: Props) => {
 
     const [textValue, setTextValue] = useState<string>('');
+
+    let navigate = useNavigate();
 
     const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setTextValue(event.target.value);
@@ -31,7 +34,7 @@ const CreateCampaignEncounters = (props: Props) => {
                     <EncounterCard scale={"miniature"}/>
                     <EncounterCard scale={"miniature"}/>
                 </div>
-                <button className="campaignEncounters_cardsSection_libraryside_cardNextBtn"><p>Complete</p></button>
+                <button className="campaignEncounters_cardsSection_libraryside_cardNextBtn"><p onClick={() => navigate('/member')}>Complete</p></button>
             </div>
 
             
