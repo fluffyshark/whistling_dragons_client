@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface CampaignData {
+  id: string
   owner: string;
   title: string;
   description: string;
@@ -17,7 +18,7 @@ interface Player {
   id: string;
 }
 
-const initialState: CampaignData[] = [{owner: "",title: "",players: [],invitedPlayers: [],description: "",thumbnail: [],maps: [],status: "",encounters: [],},];
+const initialState: CampaignData[] = [{id:"", owner: "", title: "", players: [], invitedPlayers: [], description: "", thumbnail: [], maps: [], status: "", encounters: []},];
 
 const CampaignSlice = createSlice({
   name: "campaign",
