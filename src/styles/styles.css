@@ -657,6 +657,36 @@
   font-weight: bold;
   font-family: "Labrada";
 }
+.campaignMaps_container_title_add {
+  width: 15px;
+  height: 15px;
+  border: 2px solid white;
+  border-radius: 10px;
+  transform: translate(10px, 4px);
+  cursor: pointer;
+}
+.campaignMaps_container_title_add p {
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  font-size: 18px;
+  transform: translate(2.5px, -9px);
+}
+.campaignMaps_container_title_minus {
+  width: 15px;
+  height: 15px;
+  border: 2px solid white;
+  border-radius: 10px;
+  transform: translate(25px, 4px);
+  cursor: pointer;
+}
+.campaignMaps_container_title_minus p {
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  font-size: 20px;
+  transform: translate(4.5px, -10px);
+}
 .campaignMaps_container_uploadBoxes {
   width: 646px;
   height: auto;

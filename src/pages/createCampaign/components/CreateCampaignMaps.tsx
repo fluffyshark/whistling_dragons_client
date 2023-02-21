@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import icon_upload_image from "../../../components/assets/misc/icon_upload_image.png"
+import ImageUploadCompress from '../../../components/imageCompressor/ImageUploadCompress';
 
 type CampaignMapProps = {
     setCampaignPhase: (value: string) => void;
@@ -8,19 +9,41 @@ type CampaignMapProps = {
 
 const CreateCampaignMaps = ({setCampaignPhase}: CampaignMapProps) => {
 
+    // Used for mapping out map uploaders
+    const [mapfields, setMapfields] = useState<string[]>(["map"])
+
+    // Clicking on the plus or minus button will either add or remove one "map" from mapfields, which will regulate how many image upload options the user chose to have
+    function addOrRemoveMapOptions(options:string) {
+        if (options === "add") {setMapfields(mapfields => [...mapfields, "map"])}
+        if (options === "remove") {setMapfields(mapfields.slice(0, -1));}
+    }
+
+
+    useEffect(() => {
+        console.log("mapfields", mapfields)
+    }, [mapfields])
+
   return (
     <div className='campaignMaps_container'>
         <div className="campaignMaps_container_title">
             <p>Upload Maps</p>
+            <div className="campaignMaps_container_title_add" onClick={() => {addOrRemoveMapOptions("add")}}><p>+</p></div>
+            <div className="campaignMaps_container_title_minus" onClick={() => {addOrRemoveMapOptions("remove")}}><p>-</p></div>
         </div>
         <div className="campaignMaps_container_uploadBoxes">
-            <div className="campaignMaps_container_uploadBoxes_box">
-                <img src={icon_upload_image} alt="" />
-            </div>
+        
+            {mapfields.map((map, i) => {
+                return (
+                    <div key={i} className="campaignMaps_container_uploadBoxes_box">
+                        <ImageUploadCompress shouldCompress={false} />
+                    </div>
+                )
+            })}
          
- 
         </div>
+
         <button className="campaignMaps_container_cardNextBtn" onClick={() => setCampaignPhase("enchountersPhase")}><p>Next</p></button>
+        
     </div>
   )
 }

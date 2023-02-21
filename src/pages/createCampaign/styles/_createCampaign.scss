@@ -196,6 +196,28 @@
         display: flex; justify-content: center; align-items: center;
 
         p {color: white; font-size: 25px; margin: 0; font-weight: bold; font-family: "Labrada"; }
+
+        &_add {
+            width: 15px;
+            height: 15px;
+            border: 2px solid white;
+            border-radius: 10px;
+            transform: translate(10px, 4px);
+            cursor: pointer;
+            
+            p {color: white; font-weight: bold; margin: 0; font-size:18px; transform: translate(2.5px, -9px);}
+        }
+
+        &_minus {
+            width: 15px;
+            height: 15px;
+            border: 2px solid white;
+            border-radius: 10px;
+            transform: translate(25px, 4px);
+            cursor: pointer;
+            
+            p {color: white; font-weight: bold; margin: 0; font-size:20px; transform: translate(4.5px, -10px);} 
+        }
     }
 
     &_uploadBoxes {
