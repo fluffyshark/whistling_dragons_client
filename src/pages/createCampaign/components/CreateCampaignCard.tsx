@@ -15,8 +15,6 @@ const CreateCampaignCard = ({setCampaignPhase}: CreateCampaignCardProps) => {
   function handleClick() {
     dispatch(creationPhase({creationPhase: "storyPhase"}))
     setTimeout(() => {setCampaignPhase("storyPhase")}, 1000)
-    
-    
   }
 
   return (

@@ -5,7 +5,7 @@ import icon_sword from "../../../components/assets/misc/icon_sword.png"
 import icon_heart from "../../../components/assets/misc/icon_heart.png"
 import icon_defence from "../../../components/assets/misc/icon_armor.png"
 import { createCampaignCard } from '../../../redux/CreateCampaignReducer'
-import ImageCompressor from "../../../components/imageCompressor/imageCompressor"
+import ImageUploadCompress from '../../../components/imageCompressor/ImageUploadCompress'
 
 type CardCreator = {
     cardType:string
@@ -72,7 +72,7 @@ const CardCreator = ({cardType}: CardCreator) => {
 
             <div className="cardCreator">
                 <div className="cardCreator_imageContainer">  
-                    <ImageCompressor /> 
+                    <ImageUploadCompress shouldCompress={true} /> 
                 </div> 
                 <div className="cardCreator_descriptions">
                     <div className="cardCreator_descriptions_title">
