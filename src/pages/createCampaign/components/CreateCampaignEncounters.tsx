@@ -7,13 +7,13 @@ type Props = {}
 
 const CreateCampaignEncounters = (props: Props) => {
 
-    const [textValue, setTextValue] = useState<string>('');
-
     let navigate = useNavigate();
 
-    const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setTextValue(event.target.value);
-      };
+    
+    function saveEncounterCard() {
+
+    }
+
 
   return (
     <div className="campaignEncounters">
@@ -23,6 +23,7 @@ const CreateCampaignEncounters = (props: Props) => {
         <div className="campaignEncounters_cardsSection">
             <div className="campaignEncounters_cardsSection_creatorside">
                 <CardCreator cardType={"encounter"} />
+                <button><p onClick={() => saveEncounterCard()}>Save Card</p></button>
             </div>
 
             <div className="campaignEncounters_cardsSection_libraryside">

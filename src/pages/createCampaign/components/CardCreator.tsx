@@ -93,7 +93,7 @@ const CardCreator = ({cardType}: CardCreator) => {
 
             <div className="cardCreator_encounter">
                 <div className="cardCreator_encounter_imageContainer">
-                    <img src={icon_upload_image} alt="" />    
+                    <ImageUploadCompress parentComponent={"EncounterCreator"} />     
                 </div> 
                 <div className="cardCreator_encounter_descriptions">
                     <div className="cardCreator_encounter_descriptions_title">

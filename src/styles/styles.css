@@ -770,7 +770,24 @@
   width: 40%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.campaignEncounters_cardsSection_creatorside button {
+  width: 100px;
+  height: 35px;
+  background-color: black;
+  cursor: pointer;
+  border: 2px solid #7d6b29;
+  margin-top: 15px;
+}
+.campaignEncounters_cardsSection_creatorside button p {
+  font-family: "Labrada";
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  transform: translateY(-2px);
 }
 .campaignEncounters_cardsSection_libraryside {
   width: 60%;
