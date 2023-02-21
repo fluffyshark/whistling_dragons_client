@@ -35,7 +35,7 @@ const CreateCampaignMaps = ({setCampaignPhase}: CampaignMapProps) => {
             {mapfields.map((map, i) => {
                 return (
                     <div key={i} className="campaignMaps_container_uploadBoxes_box">
-                        <ImageUploadCompress shouldCompress={false} />
+                        <ImageUploadCompress parentComponent={"MapCreator"} />
                     </div>
                 )
             })}

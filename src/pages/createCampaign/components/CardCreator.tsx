@@ -72,7 +72,7 @@ const CardCreator = ({cardType}: CardCreator) => {
 
             <div className="cardCreator">
                 <div className="cardCreator_imageContainer">  
-                    <ImageUploadCompress shouldCompress={true} /> 
+                    <ImageUploadCompress parentComponent={"CardCreator"} /> 
                 </div> 
                 <div className="cardCreator_descriptions">
                     <div className="cardCreator_descriptions_title">
