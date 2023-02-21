@@ -5,20 +5,32 @@ interface CampaignData {
   owner: string;
   title: string;
   description: string;
-  status: string;
-  players: Player[];
-  invitedPlayers?: any[];
-  thumbnail?: any[];
-  maps?: any[];
-  encounters?: any[];
+  numberOfPlayers: string;
+  thumbnail: string;
+  maps: string[];
+  encounters: CreateEncounter[];
+  players?: any[]
+  invitedPlayers?: any[]
+  status?: string
 }
 
-interface Player {
-  name: string;
+interface Players {
+  players: any[];
+}
+
+interface CreateEncounter {
   id: string;
+  title: string;
+  description: string;
+  attackInput: string;
+  healthInput: string;
+  defenceInput: string;
+  thumbnail: string;
 }
 
-const initialState: CampaignData[] = [{id:"", owner: "", title: "", players: [], invitedPlayers: [], description: "", thumbnail: [], maps: [], status: "", encounters: []},];
+
+
+const initialState: CampaignData[] = [{id:"", owner: "", title: "", players: [] as any[], numberOfPlayers:"", invitedPlayers: [], description: "", thumbnail: "", maps: [] as string[], encounters: [] as any[], status: ""},];
 
 const CampaignSlice = createSlice({
   name: "campaign",
@@ -27,8 +39,12 @@ const CampaignSlice = createSlice({
     getUserCampaigns: (state, action: PayloadAction<CampaignData>) => {
       state.push(action.payload);
     },
+    addCreatedCampaignCard: (state, action: PayloadAction<CampaignData>) => {
+      state.push(action.payload);
+      console.log("campaign action", action.payload)
+    },
   },
 });
 
-export const { getUserCampaigns } = CampaignSlice.actions;
+export const { getUserCampaigns, addCreatedCampaignCard } = CampaignSlice.actions;
 export default CampaignSlice.reducer;
