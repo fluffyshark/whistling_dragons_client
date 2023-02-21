@@ -4,8 +4,9 @@ import icon_upload_image from "../../../components/assets/misc/icon_upload_image
 import icon_sword from "../../../components/assets/misc/icon_sword.png"
 import icon_heart from "../../../components/assets/misc/icon_heart.png"
 import icon_defence from "../../../components/assets/misc/icon_armor.png"
-import { createCampaignCard } from '../../../redux/CreateCampaignReducer'
+import { createCampaignCard, createCampaignEncounter } from '../../../redux/CreateCampaignReducer'
 import ImageUploadCompress from '../../../components/imageCompressor/ImageUploadCompress'
+import { createEncounterSaving } from '../../../redux/CreateEncounterReducer'
 
 type CardCreator = {
     cardType:string
@@ -15,9 +16,9 @@ interface FormData {
     titleInput: string;
     descriptionInput: string;
     numberOfPlayersInput: string;
-    attackInput: number;
-    healthInput: number;
-    defenceInput: number;
+    attackInput: string;
+    healthInput: string;
+    defenceInput: string;
   }
 
 const CardCreator = ({cardType}: CardCreator) => {
@@ -27,16 +28,18 @@ const CardCreator = ({cardType}: CardCreator) => {
     const [formData, setFormData] = React.useState<FormData>({
         titleInput: '',
         descriptionInput: '',
-        numberOfPlayersInput: "",
-        attackInput: 10,
-        healthInput: 10,
-        defenceInput: 10,
+        numberOfPlayersInput: '',
+        attackInput: "10",
+        healthInput: "10",
+        defenceInput: "10",
       });
+      const [encounterThumbnail, setEncounterThumbnail] = useState<string>("")
 
 
     const dispatch = useDispatch()
     // Accessing global store for createCampaignData object
     const createCampaign = useSelector((state:any) => state.createcampaign.value)
+    const createEncounter = useSelector((state:any) => state.createencounter.value)
 
 
     // Handle input from textarea where user write campaign descriptions or story summary
@@ -70,6 +73,37 @@ const CardCreator = ({cardType}: CardCreator) => {
     }, [createCampaign])
 
 
+
+    useEffect(() => {
+        setEncounterThumbnail(createEncounter.thumbnail)
+    }, [createEncounter.thumbnail])
+
+
+
+    useEffect(() => {
+        // If Save Card button in CreateCampaignEncounters is clicked, then saving in CreateEncounterReducer will be true
+        if (createEncounter.saving) {
+            // saving back to false to prevent more dispatches
+            setTimeout(() => {dispatch(createEncounterSaving({saving: false}))}, 500)
+            // Dispatch encounter card data to CreateCampaignReducer
+            setTimeout(() => {
+                dispatch(createCampaignEncounter({
+                    id: "Generated in reducer",
+                    title: formData.titleInput,
+                    description: formData.descriptionInput,
+                    attackInput: formData.attackInput,
+                    healthInput: formData.healthInput,
+                    defenceInput: formData.defenceInput,
+                    thumbnail: encounterThumbnail,
+                  }));  
+            }, 1000)
+        }
+    }, [createEncounter.saving])
+
+
+    useEffect(() => {
+        console.log("createCampaign", createCampaign)
+    }, [createCampaign])
 
     
   return (

@@ -24,9 +24,19 @@ interface CreateMap {
   maps: string[];
 }
 
+interface CreateEncounter {
+  id: string;
+  title: string;
+  description: string;
+  attackInput: string;
+  healthInput: string;
+  defenceInput: string;
+  thumbnail: string;
+}
 
 
-export var createCampaignData = {id:"", owner: "", title: "", numberOfPlayers: "",  description: "", thumbnail: "", story: "", maps: [] as string[], encounters: [], creationPhase:""} 
+
+export var createCampaignData = {id:"", owner: "", title: "", numberOfPlayers: "",  description: "", thumbnail: "", story: "", maps: [] as string[], encounters: [] as any[], creationPhase:""} 
 
 const CreateCampaignSlice = createSlice({
   name: "campaign",
@@ -49,11 +59,23 @@ const CreateCampaignSlice = createSlice({
       state.value.maps.push(...action.payload.maps);
       console.log("action.payload.maps", action.payload.maps)
     },
+    createCampaignEncounter: (state, action: PayloadAction<CreateEncounter>) => {
+      const encounter = {
+        id: String(Math.floor(Math.random() * (99999999 - 1000000 + 1) + 1000000)),
+        title: action.payload.title,
+        description: action.payload.description,
+        attackInput: action.payload.attackInput,
+        healthInput: action.payload.healthInput,
+        defenceInput: action.payload.defenceInput,
+        thumbnail: action.payload.thumbnail,
+      };
+      state.value.encounters.push(encounter);
+    },
     creationPhase: (state, action: PayloadAction<CreationPhase>) => {
       state.value.creationPhase = action.payload.creationPhase
     },
   },
 });
 
-export const { createCampaignCard, createCampaignStory, createCampaignThumbnail, createMap, creationPhase } = CreateCampaignSlice.actions;
+export const { createCampaignCard, createCampaignStory, createCampaignThumbnail, createMap, createCampaignEncounter, creationPhase } = CreateCampaignSlice.actions;
 export default CreateCampaignSlice.reducer;

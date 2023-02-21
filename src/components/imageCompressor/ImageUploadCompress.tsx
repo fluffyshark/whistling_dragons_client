@@ -120,7 +120,7 @@ const ImageUploadCompress = ({parentComponent}:ImageUploadCompressProps) => {
     <div >
         
         {onlyUploadOrAlsoCompress() ? (
-                <div style={{height:"205px", width:"300px", objectFit:"cover"}}>
+                <div style={{height:"205px", width:"300px", objectFit:"cover", overflow:"hidden"}}>
                 <img style={{height:"205px", width:"300px", objectFit:"cover"}} src={compressedImage} alt="Compressed Image" onClick={handleFileButtonClick} />
                 <input style={{opacity:0}} type="file" accept="image/*" ref={fileInputRef}  onChange={handleFileInputChange} />
                 </div>  

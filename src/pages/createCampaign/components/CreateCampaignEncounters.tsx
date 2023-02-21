@@ -2,16 +2,20 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import CardCreator from './CardCreator';
 import EncounterCard from "../../../components/cards/EncounterCard"
+import { useDispatch } from 'react-redux';
+import { createEncounterSaving } from '../../../redux/CreateEncounterReducer';
 
 type Props = {}
 
 const CreateCampaignEncounters = (props: Props) => {
 
     let navigate = useNavigate();
+    const dispatch = useDispatch()
 
-    
+
+    // Set saving to true in CreateEncounterReducer is a trigger for CardCreator to save the encounter data to CreateCampaignReducer
     function saveEncounterCard() {
-        
+        dispatch(createEncounterSaving({saving: true}))
     }
 
 

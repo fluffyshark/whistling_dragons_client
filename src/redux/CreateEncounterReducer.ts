@@ -13,8 +13,12 @@ interface CreateEncounterThumbnail {
     thumbnail: string;
 }
 
+interface CreateEncounterSaving {
+    saving: boolean;
+}
 
-export var createEncounterData = {id:"", title: "",  description: "", thumbnail: "", attack: 0, health: 0, defence: 0} 
+
+export var createEncounterData = {id:"", title: "",  description: "", thumbnail: "", attack: 0, health: 0, defence: 0, saving: false} 
 
 const CreateEncounterSlice = createSlice({
   name: "encounter",
@@ -30,9 +34,12 @@ const CreateEncounterSlice = createSlice({
     },
     createEncounterThumbnail: (state, action: PayloadAction<CreateEncounterThumbnail>) => {
       state.value.thumbnail = action.payload.thumbnail
-    }
+    },
+    createEncounterSaving: (state, action: PayloadAction<CreateEncounterSaving>) => {
+        state.value.saving = action.payload.saving
+      }
   },
 });
 
-export const { createEncounter, createEncounterThumbnail } = CreateEncounterSlice.actions;
+export const { createEncounter, createEncounterThumbnail, createEncounterSaving } = CreateEncounterSlice.actions;
 export default CreateEncounterSlice.reducer;
