@@ -33,11 +33,6 @@ const CreateCampaignEncounters = (props: Props) => {
             <div className="campaignEncounters_cardsSection_libraryside">
                 <div className="campaignEncounters_cardsSection_libraryside_container">
                     <EncounterCard scale={"miniature"}/>
-                    <EncounterCard scale={"miniature"}/>
-                    <EncounterCard scale={"miniature"}/>
-                    <EncounterCard scale={"miniature"}/>
-                    <EncounterCard scale={"miniature"}/>
-                    <EncounterCard scale={"miniature"}/>
                 </div>
                 <button className="campaignEncounters_cardsSection_libraryside_cardNextBtn"><p onClick={() => navigate('/member')}>Complete</p></button>
             </div>

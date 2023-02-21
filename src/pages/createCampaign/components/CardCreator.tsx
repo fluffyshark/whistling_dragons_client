@@ -73,7 +73,7 @@ const CardCreator = ({cardType}: CardCreator) => {
     }, [createCampaign])
 
 
-
+    // Get encounter image from CreateEncounterReducer and set it to local store, will be sent to CreateCampaignReducer together will all other encounter card date when user press Save Card
     useEffect(() => {
         setEncounterThumbnail(createEncounter.thumbnail)
     }, [createEncounter.thumbnail])

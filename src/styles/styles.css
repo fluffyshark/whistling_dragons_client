@@ -795,8 +795,9 @@
 }
 .campaignEncounters_cardsSection_libraryside_container {
   width: 100%;
-  height: 88%;
+  height: 76%;
   padding-left: 5px;
+  padding-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -914,6 +915,7 @@
   border: 4px solid black;
   border-radius: 5px;
   box-shadow: 0px 0px 5px white;
+  margin-top: 2px;
 }
 .cardCreator_encounter_imageContainer {
   width: 100%;
@@ -1220,14 +1222,17 @@
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 0px 0px 5px white;
+  margin-top: 2px;
 }
 .encounterCard_miniature_imageContainer {
   width: 100%;
   height: 50%;
-  background-image: url("../components/assets/misc/campaignThumb01.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+}
+.encounterCard_miniature_imageContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .encounterCard_miniature_descriptions {
   width: 100%;
