@@ -64,9 +64,9 @@ const CreateCampaignSlice = createSlice({
         id: String(Math.floor(Math.random() * (99999999 - 1000000 + 1) + 1000000)),
         title: action.payload.title,
         description: action.payload.description,
-        attackInput: action.payload.attackInput,
-        healthInput: action.payload.healthInput,
-        defenceInput: action.payload.defenceInput,
+        attack: action.payload.attackInput,
+        health: action.payload.healthInput,
+        defence: action.payload.defenceInput,
         thumbnail: action.payload.thumbnail,
       };
       state.value.encounters.push(encounter);

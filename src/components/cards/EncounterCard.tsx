@@ -1,5 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import icon_sword from "../assets/misc/icon_sword.png"
+import icon_heart from "../assets/misc/icon_heart.png"
+import icon_defence from "../assets/misc/icon_armor.png"
 
 type CampaignCard = {
     scale:string
@@ -9,7 +12,9 @@ interface Encounter {
     title: string;
     description: string;
     thumbnail: string;
-    // Other properties...
+    attack: number;
+    health: number;
+    defence: number;
   }
 
 const CampaignCard = ({scale}: CampaignCard) => {
@@ -23,11 +28,22 @@ const CampaignCard = ({scale}: CampaignCard) => {
           <>
         {createCampaign.encounters.map((encounter: Encounter, i: number) => {
             return (
-                <div className="encounterCard_miniature">
+                <div key={i} className="encounterCard_miniature">
                     <div className="encounterCard_miniature_imageContainer"><img src={encounter.thumbnail} alt="" /></div>
                     <div className="encounterCard_miniature_descriptions">
                         <div className="encounterCard_miniature_descriptions_title"><p>{encounter.title}</p><p>Monster</p></div>
                         <div className="encounterCard_miniature_descriptions_text"><p>{encounter.description}</p></div>
+                        <div className="encounterCard_miniature_descriptions_stats">
+                            <div className="encounterCard_miniature_descriptions_stats_group">
+                                <img src={icon_sword} alt="" /><p>{encounter.attack}</p>
+                            </div>
+                            <div className="encounterCard_miniature_descriptions_stats_group">
+                                <img src={icon_heart} alt="" /><p>{encounter.health}</p>
+                            </div>
+                            <div className="encounterCard_miniature_descriptions_stats_group">
+                                <img src={icon_defence} alt="" /><p>{encounter.defence}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>   
             )
