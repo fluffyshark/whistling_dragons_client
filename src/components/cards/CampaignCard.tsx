@@ -1,17 +1,36 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 type Props = {}
 
+interface Campaign {
+  title: string;
+  description: string;
+  thumbnail: string;
+  numberOfPlayers: string;
+}
+
 const CampaignCard = (props: Props) => {
+
+  const campaign = useSelector((state:any) => state.campaign.value)
+  console.log(campaign)
+
   return (
-    <div className="campaignCard">
-        <div className="campaignCard_imageContainer"></div> 
-        <div className="campaignCard_descriptions">
-            <div className="campaignCard_descriptions_title"><p>THE MISTAKEN LANDS</p></div>
-            <div className="campaignCard_descriptions_text"><p>This adventure will bring our heroes to a mysterious land. How anyone ended up there is unknown, even to them. Still our heroes must travel will travel there vast lands to discover their way home. But will they survive until then...</p></div>
-            <div className="campaignCard_descriptions_players"><p>PLAYERS</p><p>5/6</p></div>
-        </div>
-    </div>
+          <>
+            {campaign.map((card: Campaign, i: number) => {
+              return (
+
+                    <div key={i} className="campaignCard">
+                        <div className="campaignCard_imageContainer"><img src={card.thumbnail} alt="" /></div> 
+                        <div className="campaignCard_descriptions">
+                            <div className="campaignCard_descriptions_title"><p>{card.title}</p></div>
+                            <div className="campaignCard_descriptions_text"><p>{card.description}</p></div>
+                            <div className="campaignCard_descriptions_players"><p>PLAYERS</p><p>{`0/${card.numberOfPlayers}`}</p></div>
+                        </div>
+                    </div>
+            )
+          })}
+    </>
   )
 }
 

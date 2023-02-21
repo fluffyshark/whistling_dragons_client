@@ -30,17 +30,17 @@ interface CreateEncounter {
 
 
 
-const initialState: CampaignData[] = [{id:"", owner: "", title: "", players: [] as any[], numberOfPlayers:"", invitedPlayers: [], description: "", thumbnail: "", maps: [] as string[], encounters: [] as any[], status: ""},];
+export const CampaignData: CampaignData[] = [];
 
 const CampaignSlice = createSlice({
   name: "campaign",
-  initialState,
+  initialState: {value: CampaignData},
   reducers: {
     getUserCampaigns: (state, action: PayloadAction<CampaignData>) => {
-      state.push(action.payload);
+      state.value.push(action.payload);
     },
     addCreatedCampaignCard: (state, action: PayloadAction<CampaignData>) => {
-      state.push(action.payload);
+      state.value.push(action.payload);
       console.log("campaign action", action.payload)
     },
   },

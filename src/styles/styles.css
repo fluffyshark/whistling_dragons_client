@@ -1028,10 +1028,12 @@
 .campaignCard_imageContainer {
   width: 100%;
   height: 50%;
-  background-image: url("../components/assets/misc/campaignThumb01.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+}
+.campaignCard_imageContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .campaignCard_descriptions {
   width: 100%;
@@ -1053,6 +1055,7 @@
   font-family: "Labrada", serif;
   margin: 0;
   margin-top: 5px;
+  text-transform: uppercase;
 }
 .campaignCard_descriptions_text {
   width: 100%;

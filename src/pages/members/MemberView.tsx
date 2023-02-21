@@ -29,13 +29,6 @@ const MemberView = (props: Props) => {
         <div className="memberView_cardContainer" id="memberView_cardContainer">
 
           <CampaignCard />
-          <CampaignCard />
-          <CampaignCard />
-          <CampaignCard />
-          <CampaignCard />
-          <CampaignCard />
-          <CampaignCard />
-          <CampaignCard />
          
         </div>
 
