@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux"
 import imageCompression from 'browser-image-compression';
 import icon_upload_image from "../assets/misc/icon_upload_image.png"
-import { createCampaignThumbnail } from '../../redux/CreateCampaignReducer';
+import { createCampaignThumbnail, createMap } from '../../redux/CreateCampaignReducer';
 
 type ImageUploadCompressProps = {
     parentComponent:string
@@ -85,9 +85,9 @@ const ImageUploadCompress = ({parentComponent}:ImageUploadCompressProps) => {
 
      // Dispatch image to createCampaignReducer if parent component is CardCreator
      useEffect(() => {
-        console.log("compressedImage", origImage)
-        if (parentComponent === "MapCreator") {
-            setTimeout(() => { dispatch(createCampaignThumbnail({ thumbnail: compressedImage })) }, 1000)
+        console.log("origImage", origImage)
+        if (parentComponent === "MapCreator" && origImage !== "") {
+            setTimeout(() => { dispatch(createMap({ maps: [origImage] })) }, 1000)
         }
     }, [origImage])
 
