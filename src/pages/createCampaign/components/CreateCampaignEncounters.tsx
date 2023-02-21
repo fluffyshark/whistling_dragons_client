@@ -11,7 +11,7 @@ const CreateCampaignEncounters = (props: Props) => {
 
     
     function saveEncounterCard() {
-
+        
     }
 
 

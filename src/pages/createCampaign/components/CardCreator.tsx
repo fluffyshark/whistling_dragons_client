@@ -15,16 +15,22 @@ interface FormData {
     titleInput: string;
     descriptionInput: string;
     numberOfPlayersInput: string;
+    attackInput: number;
+    healthInput: number;
+    defenceInput: number;
   }
 
 const CardCreator = ({cardType}: CardCreator) => {
 
 
-    // Captures the value of three inputs, will be sent to dispatch to createCampaignCard reducer 
+    // Captures the value of three inputs, will be sent to dispatch to reducer of either campaign card or encounter card 
     const [formData, setFormData] = React.useState<FormData>({
         titleInput: '',
         descriptionInput: '',
         numberOfPlayersInput: "",
+        attackInput: 10,
+        healthInput: 10,
+        defenceInput: 10,
       });
 
 
@@ -110,15 +116,15 @@ const CardCreator = ({cardType}: CardCreator) => {
                     <div className="cardCreator_encounter_descriptions_stats">
                         <div className="cardCreator_encounter_descriptions_stats_field">
                             <img src={icon_sword} alt="" />
-                            <input type="text" placeholder='10' />
+                            <input type="text" name="attackInput" placeholder='10' value={formData.attackInput} onChange={handleInputChange} />
                         </div>
                         <div className="cardCreator_encounter_descriptions_stats_field">
                             <img src={icon_heart} alt="" />
-                            <input type="text" placeholder='10' />
+                            <input type="text" name="healthInput" placeholder='10' value={formData.healthInput} onChange={handleInputChange} />
                         </div>
                         <div className="cardCreator_encounter_descriptions_stats_field">
                             <img src={icon_defence} alt="" />
-                            <input type="text" placeholder='10' />
+                            <input type="text" name="defenceInput" placeholder='10' value={formData.defenceInput} onChange={handleInputChange} />
                         </div>
                     </div>
                 </div>
