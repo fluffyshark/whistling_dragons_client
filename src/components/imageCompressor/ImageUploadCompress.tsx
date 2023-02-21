@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import imageCompression from 'browser-image-compression';
 import icon_upload_image from "../assets/misc/icon_upload_image.png"
 import { createCampaignThumbnail, createMap } from '../../redux/CreateCampaignReducer';
+import { createEncounterThumbnail } from '../../redux/CreateEncounterReducer';
 
 type ImageUploadCompressProps = {
     parentComponent:string
@@ -23,15 +24,17 @@ const ImageUploadCompress = ({parentComponent}:ImageUploadCompressProps) => {
     const createCampaign = useSelector((state:any) => state.createcampaign.value)
 
 
+    // Save uploaded image to local storage
     const handleFileInputChange = () => {
         const imageFile = fileInputRef.current?.files?.[0];
         if (imageFile) {
             setOrigImage(URL.createObjectURL(imageFile));
             setOrigImageFile(imageFile);
-
         }
     };
 
+
+    // Handling compression
     const handleCompressImage = () => {
     
         const options = {
@@ -57,14 +60,15 @@ const ImageUploadCompress = ({parentComponent}:ImageUploadCompressProps) => {
     };
 
 
+
+    // Triggering uploading window (input tag is also needed)
     const handleFileButtonClick = () => {
         fileInputRef.current?.click();
-        setTimeout(() => {
-            handleCompressImage()
-        }, 500)
     };
 
 
+
+    // Start image compression if the image has been uploaded as origImageFile 
     useEffect(() => {
         if (origImageFile !== null) {
             handleCompressImage();
@@ -73,17 +77,20 @@ const ImageUploadCompress = ({parentComponent}:ImageUploadCompressProps) => {
 
 
 
-    // Dispatch image to createCampaignReducer if parent component is CardCreator
+    // Dispatch image to createCampaignReducer if parent component is CardCreator or CreateCampaignEncounters
     useEffect(() => {
         console.log("compressedImage", compressedImage)
         if (parentComponent === "CardCreator") {
             setTimeout(() => { dispatch(createCampaignThumbnail({ thumbnail: compressedImage })) }, 1000)
         }
+        if (parentComponent === "EncounterCreator") {
+            setTimeout(() => { dispatch(createEncounterThumbnail({ thumbnail: compressedImage })) }, 1000)
+        }
     }, [compressedImage])
 
 
 
-     // Dispatch image to createCampaignReducer if parent component is CardCreator
+     // Dispatch image to createCampaignReducer if parent component is MapCreator
      useEffect(() => {
         console.log("origImage", origImage)
         if (parentComponent === "MapCreator" && origImage !== "") {
@@ -92,12 +99,8 @@ const ImageUploadCompress = ({parentComponent}:ImageUploadCompressProps) => {
     }, [origImage])
 
 
-    useEffect(() => {
-        console.log("createCampaign", createCampaign)
-    }, [createCampaign])
 
-
-
+    // Differ between if image is meant to be used as thumbnail or map, no compression for maps
     function onlyUploadOrAlsoCompress() {
         let image = ""
 
