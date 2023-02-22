@@ -12,6 +12,7 @@ interface CampaignData {
   players?: any[]
   invitedPlayers?: any[]
   status?: string
+  story: string
 }
 
 interface Players {
@@ -28,6 +29,12 @@ interface CreateEncounter {
   thumbnail: string;
 }
 
+interface updateCampaignStory {
+  id: string;
+  story: string;
+}
+
+
 
 
 export const CampaignData: CampaignData[] = [];
@@ -43,8 +50,14 @@ const CampaignSlice = createSlice({
       state.value.push(action.payload);
       console.log("campaign action", action.payload)
     },
+    updateCampaignStory: (state, action: PayloadAction<updateCampaignStory>) => {
+      state.value.map((campaign) => {
+        if (campaign.id === action.payload.id) {campaign.story = action.payload.story} 
+      })
+    },
+
   },
 });
 
-export const { getUserCampaigns, addCreatedCampaignCard } = CampaignSlice.actions;
+export const { getUserCampaigns, addCreatedCampaignCard, updateCampaignStory } = CampaignSlice.actions;
 export default CampaignSlice.reducer;

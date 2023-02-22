@@ -51,6 +51,8 @@ const CampaignView = () => {
     console.log("campaignData", campaignData)
   }, [campaignData])
 
+  
+
   return (
     <div className='campaignView'>
       
