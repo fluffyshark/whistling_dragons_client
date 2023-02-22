@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<StartView/>}></Route> 
-      <Route path="/campaigns" element={<CampaignView/>}></Route> 
+      <Route path="/campaign" element={<CampaignView/>}></Route> 
       <Route path="/createcampaign" element={<CreateCampaign/>}></Route> 
       <Route path="/member" element={<MemberView/>}></Route> 
       <Route path="/*" element={<StartView/>}></Route> 
