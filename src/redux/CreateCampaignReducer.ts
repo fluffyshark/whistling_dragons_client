@@ -79,3 +79,4 @@ const CreateCampaignSlice = createSlice({
 
 export const { createCampaignCard, createCampaignStory, createCampaignThumbnail, createMap, createCampaignEncounter, creationPhase } = CreateCampaignSlice.actions;
 export default CreateCampaignSlice.reducer;
+

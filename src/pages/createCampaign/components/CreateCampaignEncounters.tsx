@@ -31,6 +31,7 @@ const CreateCampaignEncounters = (props: Props) => {
             id: createCampaign.id,
             owner: createCampaign.owner,
             title: createCampaign.title,
+            story: createCampaign.story,
             numberOfPlayers: createCampaign.numberOfPlayers,
             description: createCampaign.description,
             thumbnail: createCampaign.thumbnail,
