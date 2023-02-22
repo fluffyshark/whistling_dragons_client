@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 import sunCrownImg from "../../components/assets/misc/img_sun_crown.png"
+import CampaignMap from './components/CampaignMap'
 import CampaignStory from './components/CampaignStory'
 
 interface Campaign {
@@ -51,7 +52,7 @@ const CampaignView = () => {
     console.log("campaignData", campaignData)
   }, [campaignData])
 
-  
+
 
   return (
     <div className='campaignView'>
@@ -69,8 +70,9 @@ const CampaignView = () => {
           </div>
         </div>
 
-        <CampaignStory story={campaignData?.story ?? ""} />
-
+          <CampaignMap maps={campaignData?.maps ?? ""} />
+        {/* <CampaignStory story={campaignData?.story ?? ""} />  */}
+        
     </div>
   )
 }
