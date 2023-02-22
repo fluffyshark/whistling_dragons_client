@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 import sunCrownImg from "../../components/assets/misc/img_sun_crown.png"
+import CampaignDiceRoll from './components/CampaignDiceRoll'
 import CampaignMap from './components/CampaignMap'
 import CampaignStory from './components/CampaignStory'
 
@@ -70,7 +71,9 @@ const CampaignView = () => {
           </div>
         </div>
 
-          <CampaignMap maps={campaignData?.maps ?? ""} />
+          
+          <CampaignDiceRoll />
+        {/* <CampaignMap maps={campaignData?.maps ?? ""} />  */}
         {/* <CampaignStory story={campaignData?.story ?? ""} />  */}
         
     </div>

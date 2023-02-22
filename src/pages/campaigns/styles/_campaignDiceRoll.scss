@@ -1,0 +1,67 @@
+.campaignDice {
+    width: 50%;
+    height: 300px;
+    background-color: #000000cc;
+    margin-top: 50px;
+    display: flex; align-items: center; flex-direction: column; justify-content: center;
+    border: 3px solid #7d6b29;
+    border-radius: 2px;
+    position: relative;
+
+    &_results {
+        width: 150px;
+        height: 75px;
+        display: flex; justify-content: center; align-items: center;
+        border: 3px solid #7d6b29;
+
+        p {color: white; font-size: 25px; font-weight: bold; font-family: "Labrada"; margin: 0;}
+    }
+
+    &_diceContainter {
+        width: 100%;
+        height: 100px;
+        margin-top: 30px;
+        display: flex; justify-content: center; align-items: center; gap: 40px;
+        
+
+        img {height: 90px; cursor: pointer; transition: all .2s ease-in-out;}
+        img:hover {transform: scale(1.1)}
+
+        
+    }
+}    
+
+
+.diceAnimation {
+    animation-name:wobble;
+    animation-duration: 1s;
+}
+    
+@keyframes wobble {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    15% {
+      transform: translate3d(-25%, 0, 0) 
+                 rotate3d(0, 0, 1, -5deg);
+    }
+    30% {
+      transform: translate3d(20%, 0, 0) 
+                 rotate3d(0, 0, 1, 3deg);
+    }
+    45% {
+      transform: translate3d(-15%, 0, 0)
+                 rotate3d(0, 0, 1, -3deg);
+    }
+    60% {
+      transform: translate3d(10%, 0, 0) 
+                 rotate3d(0, 0, 1, 2deg);
+    }
+    75% {
+      transform: translate3d(-5%, 0, 0) 
+                 rotate3d(0, 0, 1, -1deg);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
