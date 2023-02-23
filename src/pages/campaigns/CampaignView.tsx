@@ -76,7 +76,7 @@ const CampaignView = () => {
           </div>
         </div>
 
-          {activeMenu === "Dice Roll" && <CampaignDiceRoll />}
+          {activeMenu === "Dice Roll" && <CampaignDiceRoll moduleType={"AllDices"} />}
           {activeMenu === "Maps" && <CampaignMap maps={campaignData?.maps ?? ""} />}
           {activeMenu === "Campaign Story" && <CampaignStory story={campaignData?.story ?? ""} />}
           

@@ -65,3 +65,31 @@
       transform: translate3d(0, 0, 0);
     }
   }
+
+
+  .resultTransform {
+    color: blue;
+  }
+
+
+
+
+
+  .characherDice_diceContainter {
+    width: 100px;
+    height: 100px;
+    display: flex; justify-content: center; align-items: center; flex-direction: column;
+    position: relative;
+    
+
+    img {height: 40px; cursor: pointer; transition: all .2s ease-in-out; position: absolute; top:90%; left:31%}
+    img:hover {transform: scale(1.1)}
+
+    &_results {
+      width: 150px;
+      height: 75px;
+      display: flex; justify-content: center; align-items: center;
+
+      p {font-size: 20px; font-weight: bold; font-family: "Labrada"; margin: 0;}
+  }
+  }

@@ -7,9 +7,12 @@ import d90 from "../../../components/assets/dices/dice_d9-00.png"
 import d12 from "../../../components/assets/dices/dice_d12.png"
 import d20 from "../../../components/assets/dices/dice_d20.png"
 
-type Props = {}
+type CampaignDiceRoll = {
+  moduleType: string
+}
 
-const CampaignDiceRoll = (props: Props) => {
+
+const CampaignDiceRoll = ({moduleType}: CampaignDiceRoll) => {
 
     const [diceResult, setDiceResult] = useState<String>("Roll A Dice")
 
@@ -33,7 +36,11 @@ const CampaignDiceRoll = (props: Props) => {
 
 
   return (
-    <div className='campaignDice'>
+      <>
+
+    {moduleType === "AllDices" && (
+
+      <div className='campaignDice'>
         <div className="campaignDice_results"><p id="diceResult">{diceResult}</p></div>
         <div className="campaignDice_diceContainter">
             <img id="d20" src={d20} alt="" onClick={() => diceRoll(20, 1)} />
@@ -44,7 +51,29 @@ const CampaignDiceRoll = (props: Props) => {
             <img id="d6" src={d6} alt="" onClick={() => diceRoll(6, 1)} />
             <img id="d4" src={d4} alt="" onClick={() => diceRoll(4, 1)} />
         </div>
-    </div>
+      </div>
+    
+    )}
+
+
+    {moduleType === "d20" && (
+      <div className="characherDice_diceContainter">
+        <div className="characherDice_diceContainter_results"><p id="diceResult" className='testingDice'>{diceResult}</p></div>
+        <img id="d20" src={d20} alt="" onClick={() => diceRoll(20, 1)} />
+      </div>
+    )}  
+
+    {moduleType === "d12" && (
+      <div className="characherDice_diceContainter">
+        <div className="characherDice_diceContainter_results"><p id="diceResult" className='testingDice'>{diceResult}</p></div>
+        <img id="d12" src={d12} alt="" onClick={() => diceRoll(12, 1)} />
+      </div>
+    )}  
+
+    
+</>
+
+
   )
 }
 

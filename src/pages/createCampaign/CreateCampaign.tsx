@@ -24,7 +24,9 @@ const CreateCampaign = (props: Props) => {
           <div className="createCampaign_menu_text">
             <Link to="/member" style={{textDecoration: "none"}}><p>Current Campaigns</p></Link>
             <Link to="/member" style={{textDecoration: "none"}}><p>Past Campaigns</p></Link>
-            <p>Create Campaign</p></div>
+            <p>Create Campaign</p>
+            <Link to="/member" style={{textDecoration: "none"}}><p>Characters</p></Link>
+          </div>
         
           <div className="createCampaign_menu_decor">
             <div className="createCampaign_menu_decor_goldenLine"></div><div className="createCampaign_menu_decor_dot"></div><div className="createCampaign_menu_decor_goldenLine"></div>

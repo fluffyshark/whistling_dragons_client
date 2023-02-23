@@ -1494,4 +1494,61 @@ a {
   to {
     transform: translate3d(0, 0, 0);
   }
+}
+.resultTransform {
+  color: blue;
+}
+
+.characherDice_diceContainter {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.characherDice_diceContainter img {
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 90%;
+  left: 31%;
+}
+.characherDice_diceContainter img:hover {
+  transform: scale(1.1);
+}
+.characherDice_diceContainter_results {
+  width: 150px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.characherDice_diceContainter_results p {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Labrada";
+  margin: 0;
+}
+
+.characterView {
+  width: 100%;
+  height: 206vh;
+  background-image: url("../components/assets/misc/character_creation_image.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+.characterView_strenghtDice {
+  position: absolute;
+  top: 18.5%;
+  left: 5.8%;
+}
+.characterView_dexterityDice {
+  position: absolute;
+  top: 27.6%;
+  left: 5.8%;
 }/*# sourceMappingURL=styles.css.map */

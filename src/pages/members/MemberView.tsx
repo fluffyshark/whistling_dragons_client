@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import sunCrownImg from "../../components/assets/misc/img_sun_crown.png"
 import CampaignCard from '../../components/cards/CampaignCard'
+import CharacterView from '../characters/CharacterView';
 import PastCampaigns from '../pastCampaigns/PastCampaigns';
 
 type Props = {}
@@ -19,7 +20,9 @@ const MemberView = (props: Props) => {
           <div className="memberView_menu_text">
             <p onClick={() => setActiveMenu("Current Campaigns")}>Current Campaigns</p>
             <p onClick={() => setActiveMenu("Past Campaigns")}>Past Campaigns</p>
-            <p onClick={() => navigate('/createcampaign')}>Create Campaign</p></div>
+            <p onClick={() => navigate('/createcampaign')}>Create Campaign</p>
+            <p onClick={() => setActiveMenu("Characters")}>Characters</p>
+          </div>
         
           <div className="memberView_menu_decor">
             <div className="memberView_menu_decor_goldenLine"></div><div className="memberView_menu_decor_dot"></div><div className="memberView_menu_decor_goldenLine"></div>
@@ -36,6 +39,7 @@ const MemberView = (props: Props) => {
 
           {activeMenu === "Current Campaigns" && <CampaignCard />}
           {activeMenu === "Past Campaigns" && <PastCampaigns />}
+          {activeMenu === "Characters" && <CharacterView />}
          
         </div>
 
