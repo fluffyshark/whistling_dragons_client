@@ -39,43 +39,47 @@ const CampaignView = () => {
   
   // Get locally store campaign data, which will be sent to child compents as props
   const [campaignData, setCampaignData] = useState<Campaign>();
+  const [activeMenu, setActiveMenu] = useState<string>("Campaign Story") 
 
   // Accessing global store for campaignData object
   const campaign = useSelector((state:any) => state.campaign.value)
 
+
+
+  // Filter for correct campaign from redux
   useEffect(() => {
     const data = campaign.find((obj: Campaign) => obj.id === id);
     setCampaignData(data);
   }, [campaign, id]);
 
-
-  useEffect(() => {
-    console.log("campaignData", campaignData)
-  }, [campaignData])
-
-
+  
 
   return (
     <div className='campaignView'>
       
       <div className="memberView_menu">
-          <div className="memberView_menu_text"><p>Map</p><p>Story</p><p>Players</p><p>Encounters</p><p>Dice Roll</p></div>
+          <div className="memberView_menu_text">
+            <p onClick={() => setActiveMenu("Maps")}>Map</p>
+            <p onClick={() => setActiveMenu("Campaign Story")}>Story</p>
+            <p onClick={() => setActiveMenu("Players")}>Players</p>
+            <p onClick={() => setActiveMenu("Encounters")}>Encounters</p>
+            <p onClick={() => setActiveMenu("Dice Roll")}>Dice Roll</p>
+          </div>
         
           <div className="memberView_menu_decor">
             <div className="memberView_menu_decor_goldenLine"></div><div className="memberView_menu_decor_dot"></div><div className="memberView_menu_decor_goldenLine"></div>
           </div>
 
           <div className="memberView_menu_title_and_crown">
-            <p>Current Campaings</p>
+            <p>{activeMenu}</p>
             <img src={sunCrownImg} alt="" />
           </div>
         </div>
 
+          {activeMenu === "Dice Roll" && <CampaignDiceRoll />}
+          {activeMenu === "Maps" && <CampaignMap maps={campaignData?.maps ?? ""} />}
+          {activeMenu === "Campaign Story" && <CampaignStory story={campaignData?.story ?? ""} />}
           
-          <CampaignDiceRoll />
-        {/* <CampaignMap maps={campaignData?.maps ?? ""} />  */}
-        {/* <CampaignStory story={campaignData?.story ?? ""} />  */}
-        
     </div>
   )
 }

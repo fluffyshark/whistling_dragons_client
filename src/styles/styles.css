@@ -1108,6 +1108,10 @@
   transform: translateY(-8px);
 }
 
+a {
+  text-decoration: none;
+}
+
 .encounterCard_normal {
   width: 300px;
   height: 400px;
