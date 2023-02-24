@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Account from '../../components/account/Account'
 import sunCrownImg from "../../components/assets/misc/img_sun_crown.png"
 import CreateCampaignCard from './components/CreateCampaignCard'
 import CreateCampaignEncounters from './components/CreateCampaignEncounters'
@@ -14,11 +16,13 @@ const CreateCampaign = (props: Props) => {
 
   const [activeMenu, setActiveMenu] = useState<string>("Current Campaigns") 
   const [campaignPhase, setCampaignPhase] = useState<string>("cardPhase")
-  
+
 
   
   return (
     <div className='createCampaign'>
+
+        <div className="createCampaign_account"><Account /></div>
 
         <div className="createCampaign_menu">
           <div className="createCampaign_menu_text">

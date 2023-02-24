@@ -1,0 +1,79 @@
+.account {
+    width: 225px;
+    height: 300px;
+    font-family: 'Labrada', serif; 
+
+    &_button {
+        width: 100%;
+        height: 45px;
+        display: flex; justify-content: flex-end;
+        img {height: 45px; cursor: pointer;}
+    }
+
+    &_dropdown {
+        width: calc(100% - 5px);
+        height: calc(100% - 45px - 20px - 5px);
+        margin-top: 20px;
+        border: 3px solid #7d6b29;
+        border-radius: 15px;
+        background-color: black;
+
+
+        &_top {
+            width: 100%;
+            height: 40px;
+            border-bottom: 2px solid #7d6b29;
+            display: flex; align-items: center; gap: 10px;
+            
+
+            img {height: calc(100% - 10px); margin-left: 5px; }
+
+            &_details {
+                width: calc(100% - 30px);
+                height: 100%;
+                color: white;
+                font-size: 13px;
+                
+
+                p:nth-child(1) {color: #d8d2e3; margin: 0; font-weight: bold;}
+                p:nth-child(2) {color: #666666; margin: 0; margin-top: -2px;}
+            }
+        }
+
+        &_bottom {
+            width: 100%;
+            height: calc(100% - 50px);
+
+            &_menuitem {
+                width: 100%;
+                height: calc(100% / 5);
+                display: flex; align-items: center;
+                cursor: pointer;
+
+                img {height: calc(100% - 17px); margin-left: 8px; margin-right: 15px;}
+
+                p {color: #d8d2e3; font-size: 15px; margin: 0; }
+            }
+
+            &_menuitem:hover {
+                background-color: #1a1a1acf;
+            }
+        }
+
+    }
+
+    
+}
+
+
+.invite {
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: red;
+    margin-left: 5px;
+    transform: translateY(1px);
+    display: flex; align-items: center; justify-content: center;
+
+    p {color:white; font-size: 15px; margin: 0; transform: translateY(-1.6px);}
+}

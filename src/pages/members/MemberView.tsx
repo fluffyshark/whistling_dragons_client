@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import Account from '../../components/account/Account';
 import sunCrownImg from "../../components/assets/misc/img_sun_crown.png"
 import CampaignCard from '../../components/cards/CampaignCard'
 import CharacterView from '../characters/CharacterView';
@@ -15,6 +16,8 @@ const MemberView = (props: Props) => {
 
   return (
     <div className='memberView'>
+
+        <div className="memberView_account"><Account/></div>
 
         <div className="memberView_menu">
           <div className="memberView_menu_text">

@@ -7,6 +7,12 @@
     background-position: center center;
     display: flex; align-items: center; flex-direction: column;
 
+    &_account {
+        width: auto;
+        height: auto;
+        position: absolute; top: 2%; left: 87%;
+    }
+
     &_menu {
         width: 50%;
         height: 225px;

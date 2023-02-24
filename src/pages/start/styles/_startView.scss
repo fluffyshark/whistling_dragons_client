@@ -1,7 +1,15 @@
 .startView {
     width: 100%;
     height: 100vh;
+    overflow: scroll;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+
+.startView::-webkit-scrollbar {
+    display: none;
+  }
 
 .sectionOne {
     width: 100%;
@@ -11,6 +19,12 @@
     background-size: cover;
     background-position: center center; 
     position: relative;
+
+    &_account {
+        width: auto;
+        height: auto;
+        position: absolute; top: 2%; left: 87%;
+    }
 
     &_menu {
         width: 100%;
