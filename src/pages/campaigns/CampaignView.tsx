@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import Account from '../../components/account/Account'
 
 import sunCrownImg from "../../components/assets/misc/img_sun_crown.png"
 import CampaignDiceRoll from './components/CampaignDiceRoll'
@@ -56,6 +57,8 @@ const CampaignView = () => {
 
   return (
     <div className='campaignView'>
+
+      <div className="campaignView_account"><Account/></div>
       
       <div className="memberView_menu">
           <div className="memberView_menu_text">

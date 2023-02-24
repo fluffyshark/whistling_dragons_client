@@ -427,6 +427,14 @@
   align-items: center;
   flex-direction: column;
 }
+.campaignView_account {
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 2%;
+  left: 87%;
+  z-index: 100;
+}
 
 .createCampaign {
   width: 100%;
