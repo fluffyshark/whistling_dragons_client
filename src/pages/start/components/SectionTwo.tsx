@@ -23,7 +23,7 @@ const SectionTwo = (props: Props) => {
   }, [])
 
 
-
+  
 
 
   return (

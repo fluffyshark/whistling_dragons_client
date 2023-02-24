@@ -5,10 +5,15 @@ import EncounterCard from "../../../components/cards/EncounterCard"
 import { useDispatch, useSelector } from 'react-redux';
 import { createEncounterSaving } from '../../../redux/CreateEncounterReducer';
 import { addCreatedCampaignCard } from '../../../redux/CampaignReducer';
+import icon_encounterCollection from "../../../components/assets/misc/icon_encounterCollection.png"
+import EncountersCollection from './EncountersCollection';
 
 type Props = {}
 
 const CreateCampaignEncounters = (props: Props) => {
+
+    const [toggleCollection, setToggleCollection] = useState<boolean>(false)
+
 
     let navigate = useNavigate();
     const dispatch = useDispatch()
@@ -52,6 +57,8 @@ const CreateCampaignEncounters = (props: Props) => {
   return (
     <div className="campaignEncounters">
 
+        {toggleCollection && <EncountersCollection setToggleCollection={setToggleCollection}/>}
+
         <div className="campaignEncounters_title"><p>Create Encounters</p></div>
 
         <div className="campaignEncounters_cardsSection">
@@ -65,6 +72,7 @@ const CreateCampaignEncounters = (props: Props) => {
                     <EncounterCard scale={"miniature"}/>
                 </div>
                 <button className="campaignEncounters_cardsSection_libraryside_cardNextBtn"><p onClick={() => completeCampaignCard()}>Complete</p></button>
+                <img className='campaignEncounters_cardsSection_libraryside_collectionBtn' onClick={() => setToggleCollection(true)} src={icon_encounterCollection} alt="" />
             </div>
 
             

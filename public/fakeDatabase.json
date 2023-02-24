@@ -18,6 +18,94 @@
             "title": "Darkness Awakens",
             "content": "The second session of our campaign has now ended. Despite our best efforts I have to inform that all our unlikely heroes are still alive. This luck is probably not everlasting though. In this session our adventure continued with our heroes crossing the large mountains, constantly attacked by snow goblins. Wave after wave we repelled and ultimatly surviced the onslaught. Now exausted, hungry and unable to sleep we wait for the end."
         }
+    ],
+
+    "encounters": [
+        {
+            "name": "Sea Pelican",
+            "type": "Monster",
+            "description": "The Sea Pelican's unique appearance and abilities, including a spacious beak and expandable throat for catching prey, symbolize abundance and grace, while captivating observers with its elegant movements.",
+            "attack": 2,
+            "health": 5,
+            "defence": 0,
+            "img": "./encounter/monster_sea_pelican.png"
+        }, 
+        {
+            "name": "Sea Dragon",
+            "type": "Monster",
+            "description": "Sea Dragon's majestic blue-green scales, sinuous body, and powerful fins create a dazzling display. Its might symbolizes the undiscovered mysteries and wonders of the ocean. Encounter with the legendary creature is unforgettable.",
+            "attack": 100,
+            "health": 1000,
+            "defence": 40,
+            "img": "./encounter/monster_sea_dragon.png"
+        },
+        {
+            "name": "Giant Octupus",
+            "type": "Monster",
+            "description": "The Giant Octopus, a massive deep-sea creature, is a master of camouflage that blends with its surroundings. With suckers on its eight arms, it overpowers prey with strength and strategy. Its reputation as a formidable predator is well-deserved.",
+            "attack": 30,
+            "health": 200,
+            "defence": 25,
+            "img": "./encounter/monster_octupus.png"
+        },
+        {
+            "name": "Megalodon ",
+            "type": "Monster",
+            "description": "The Megalodon, a massive shark that can grow up to 60 feet, is a fearsome symbol of power and ferocity. Its razor-sharp teeth and powerful tail remind us of the dangers lurking beneath the waves and its legacy lives on as a testament to the awe-inspiring creatures of the past.",
+            "attack": 50,
+            "health": 350,
+            "defence": 20,
+            "img": "./encounter/monster_megladon.png"
+        },
+        {
+            "name": "Ice Parrot ",
+            "type": "Monster",
+            "description": "The Ice Parrot is a rare bird of the frozen north with shimmering feathers of white and blue. It symbolizes resilience and adaptability in harsh environments, and its beauty inspires awe.",
+            "attack": 7,
+            "health": 10,
+            "defence": 2,
+            "img": "./encounter/monster_ice_parrot.png"
+        },
+        {
+            "name": "Ice Lion ",
+            "type": "Monster",
+            "description": "The Ice Lion commands respect and awe, with pristine white fur and icy blue eyes. Its roar echoes across snow-capped mountains, reminding all of its strength and regal power. Its razor-sharp claws and lightning-fast speed make it a fearsome hunter of the frozen tundras.",
+            "attack": 45,
+            "health": 110,
+            "defence": 25,
+            "img": "./encounter/monster_ice_lion.png"
+        },
+        {
+            "name": "Fire Knight ",
+            "type": "Monster",
+            "description": "The Fire Knight, clad in red-hot armor and wielding a sword of flame, is a fierce warrior whose strength and courage inspire fear in his foes. He is a symbol of resilience and reminds all that true courage means facing fear head-on.",
+            "attack": 75,
+            "health": 220,
+            "defence": 30,
+            "img": "./encounter/monster_fire_knight.png"
+        },
+        {
+            "name": "Flame Dragon ",
+            "type": "Monster",
+            "description": "The Flame Dragon is a powerful and majestic creature with brilliant orange-red scales and shimmering flames on its wings. Its scorching breath can melt even the strongest of metals, reminding all of the beauty and danger of fire.",
+            "attack": 110,
+            "health": 1200,
+            "defence": 65,
+            "img": "./encounter/monster_fire_dragon.png"
+        }
+    ],
+
+    "campaigns": [
+        {
+            "name": "Sea Pelican",
+            "type": "Monster",
+            "description": "The Sea Pelican's unique appearance and abilities, including a spacious beak and expandable throat for catching prey, symbolize abundance and grace, while captivating observers with its elegant movements.",
+            "attack": 2,
+            "health": 5,
+            "defence": 0,
+            "img": "./encounter/monster_sea_pelican.png"
+        }
     ]
+
     }
 ]
