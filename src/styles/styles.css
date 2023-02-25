@@ -1607,23 +1607,106 @@ a {
 }
 
 .characterView {
-  width: 100%;
-  height: 206vh;
-  background-image: url("../components/assets/misc/character_creation_image.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  width: 50%;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid #7d6b29;
+  border-radius: 2px;
   position: relative;
 }
-.characterView_strenghtDice {
-  position: absolute;
-  top: 18.5%;
-  left: 5.8%;
+.characterView button {
+  width: 150px;
+  height: 30px;
+  margin-top: 30px;
+  background-color: black;
+  color: white;
+  border: 2px solid #7d6b29;
 }
-.characterView_dexterityDice {
-  position: absolute;
-  top: 27.6%;
-  left: 5.8%;
+.characterView_characterName {
+  width: 210px;
+  height: 30px;
+  margin-top: 30px;
+  border: 2px solid #7d6b29;
+}
+.characterView_characterName input {
+  width: 198px;
+  height: calc(100% - 3px);
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  padding-left: 10px;
+  font-family: "Labrada";
+  font-size: 20px;
+}
+.characterView_section {
+  width: 100%;
+  height: 35px;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+.characterView_statsSection {
+  width: 100%;
+  height: 120px;
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+.characterView_statsSection_container {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.characterView_statsSection_container_stats {
+  width: 75px;
+  height: 45px;
+  border: 2px solid #7d6b29;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.characterView_statsSection_container_stats p:nth-child(1) {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+.characterView_statsSection_container_stats p:nth-child(2) {
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.inputContainer {
+  width: 210px;
+  height: 30px;
+  border: 2px solid #7d6b29;
+}
+.inputContainer input {
+  width: 198px;
+  height: calc(100% - 3px);
+  color: white;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  padding-left: 10px;
+  font-family: "Labrada";
+  font-size: 20px;
 }
 
 .account {
@@ -1794,4 +1877,18 @@ a {
   font-weight: bold;
   margin: 0;
   margin-top: 50px;
+}
+
+.characterDice {
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.characterDice img {
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+}
+.characterDice img:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=styles.css.map */

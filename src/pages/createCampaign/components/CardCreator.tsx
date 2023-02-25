@@ -24,7 +24,7 @@ interface FormData {
 const CardCreator = ({cardType}: CardCreator) => {
 
 
-    // Captures the value of three inputs, will be sent to dispatch to reducer of either campaign card or encounter card 
+    // Captures the value of six inputs, will be sent to dispatch to reducer of either campaign card or encounter card 
     const [formData, setFormData] = React.useState<FormData>({
         titleInput: '',
         descriptionInput: '',
